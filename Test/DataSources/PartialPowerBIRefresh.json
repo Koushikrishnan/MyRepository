@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "9c7785be-a3e5-4a9c-a93e-4936e7c32396",
+    "Name": "PartialPowerBIRefresh",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "51e29774-9e2e-ef11-840b-000d3a13e2ad"
+  }
+]

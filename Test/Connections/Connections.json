@@ -1,0 +1,69 @@
+{
+  "1bb6cfc9-aad0-43cb-bc81-cc6e13fae994": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "PowerBI Partial Refresh Util",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_powerbi-20partial-20refresh-20util-5ff78dc94155-ba7a2848e8267a75",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "cf387c74-b4bb-4c43-961f-831730194776"
+    ],
+    "id": "1bb6cfc9-aad0-43cb-bc81-cc6e13fae994"
+  },
+  "cf387c74-b4bb-4c43-961f-831730194776": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "1bb6cfc9-aad0-43cb-bc81-cc6e13fae994": {
+          "value": "shared_powerbi-20partial-20refresh-20util-5ff78dc94155-ba7a2848e8267a75"
+        },
+        "workflowDisplayName": {
+          "value": "Partial PowerBI Refresh"
+        },
+        "workflowEntityId": {
+          "value": "51e29774-9e2e-ef11-840b-000d3a13e2ad"
+        },
+        "workflowName": {
+          "value": "6f2f5b6a-c8c5-c4af-1077-fcb9a959e105"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_powerbi-20partial-20refresh-20util-5ff78dc94155-ba7a2848e8267a75": {
+          "value": "1bb6cfc9-aad0-43cb-bc81-cc6e13fae994"
+        },
+        "workflowDisplayName": {
+          "value": "Partial PowerBI Refresh"
+        },
+        "workflowEntityId": {
+          "value": "51e29774-9e2e-ef11-840b-000d3a13e2ad"
+        },
+        "workflowName": {
+          "value": "6f2f5b6a-c8c5-c4af-1077-fcb9a959e105"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "PartialPowerBIRefresh"
+    ],
+    "dependencies": {
+      "shared_powerbi-20partial-20refresh-20util-5ff78dc94155-ba7a2848e8267a75": "1bb6cfc9-aad0-43cb-bc81-cc6e13fae994"
+    },
+    "dependents": [],
+    "id": "cf387c74-b4bb-4c43-961f-831730194776"
+  }
+}

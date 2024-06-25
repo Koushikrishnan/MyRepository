@@ -1,0 +1,622 @@
+Home As screen:
+    Fill: =RGBA(31, 31, 31, 1)
+    Height: =(Max(960, App.MinScreenHeight))
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    Width: =Max(1200, App.MinScreenWidth)
+
+    Label1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(237, 237, 237, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(31, 31, 31, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =68
+        Size: =24
+        Text: ="NAZ POWER BI REFRESH APP"
+        Width: =783
+        X: =204
+        Y: =17
+        ZIndex: =13
+
+    Image1 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =118
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='Hero New'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =140
+        X: =93
+        Y: =9
+        ZIndex: =14
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =36
+
+        lblWorkspace As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Workspace Name"
+            Width: =195
+            X: =233
+            Y: =121
+            ZIndex: =2
+
+        lblDataset As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Dataset Name"
+            Width: =195
+            X: =233
+            Y: =216
+            ZIndex: =4
+
+        lblTable As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Table Name"
+            Width: =195
+            X: =233
+            Y: =396
+            ZIndex: =6
+
+        lblPartition As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Partition Name"
+            Width: =195
+            X: =233
+            Y: =487
+            ZIndex: =8
+
+        drpWorkspace As dropdown:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =46
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            Items: |-
+                =SortByColumns(
+                Distinct(TblPartitions,WorkspaceName),"Value")
+            OnChange: =Reset(drpDataset)
+            PaddingBottom: =5
+            PaddingLeft: =12
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            Size: =13
+            Width: =409
+            X: =440
+            Y: =121
+            ZIndex: =9
+
+        drpDataset As dropdown:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =46
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            Items: |-
+                =SortByColumns(
+                Distinct(
+                    Filter(
+                        TblPartitions,
+                        WorkspaceName=drpWorkspace.SelectedText.Value
+                    ),
+                    DatasetName
+                ), "Value")
+            OnChange: =Reset(cmbTable)
+            PaddingBottom: =5
+            PaddingLeft: =12
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            Size: =13
+            Width: =409
+            X: =440
+            Y: =216
+            ZIndex: =10
+
+        Button1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =If(drpRefresh.Selected.Value = "N" && CountRows(cmbTable.SelectedItems) > 0 && CountRows(cmbPartition.SelectedItems) > 0, DisplayMode.Edit, DisplayMode.Disabled)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 80%)
+            OnSelect: |-
+                =PartialPowerBIRefresh.Run(
+                    1045988834629905,
+                    "Trigger Refresh",
+                    "powerbi_refresh_run.yaml",
+                    "/Workspace/Repos/radar/radar/blt/naztech/powerbi/",
+                    txtEmail.Text,
+                    TrimEnds(drpDataset.Selected.Value),
+                    TrimEnds(drpRefresh.Selected.Value),
+                    TrimEnds(lblPartitionparam.Text),
+                    TrimEnds(drpWorkspace.Selected.Value)
+                )
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 100%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="R E F R E S H"
+            Width: =164
+            X: =505
+            Y: =859
+            ZIndex: =15
+
+        lblRefresh As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Full Refresh Flag"
+            Width: =195
+            X: =233
+            Y: =307
+            ZIndex: =16
+
+        drpRefresh As dropdown:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =46
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            Items: =["N", "Y"]
+            PaddingBottom: =5
+            PaddingLeft: =12
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            Size: =13
+            Width: =409
+            X: =440
+            Y: =307
+            ZIndex: =17
+
+        cmbTable As combobox:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DefaultSelectedItems: |-
+                =   Filter(
+                        TblPartitions,
+                        WorkspaceName = drpWorkspace.Selected.Value && DatasetName = drpDataset.Selected.Value
+                    )
+                    /*If(tglTable.Value=true, SortByColumns(
+                    Distinct(
+                        Filter(
+                            TblPartitions,
+                            DatasetName = drpDataset.SelectedText.Value && WorkspaceName = drpWorkspace.SelectedText.Value
+                        ),
+                        TableName
+                    ),
+                    "Value"
+                ))*/
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            DisplayFields: =["Value"]
+            DisplayMode: =If(drpRefresh.Selected.Value = "N", DisplayMode.Edit , DisplayMode.Disabled)
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =46
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            InputTextPlaceholder: ="Find Tables to Refresh"
+            Items: |-
+                =SortByColumns(
+                    Distinct(
+                        Filter(
+                            TblPartitions,
+                            DatasetName = drpDataset.SelectedText.Value && WorkspaceName = drpWorkspace.SelectedText.Value
+                        ),
+                        TableName
+                    ),
+                    "Value"
+                )
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SearchFields: =["Value"]
+            SearchItems: |-
+                =Search(SortByColumns(
+                Distinct(
+                    Filter(
+                        TblPartitions,
+                        DatasetName=drpDataset.SelectedText.Value && 
+                        WorkspaceName=drpWorkspace.SelectedText.Value
+                    ),
+                    TableName
+                ), "Value"),cmbTable.SearchText,Value)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            Size: =13
+            Width: =409
+            X: =440
+            Y: =395
+            ZIndex: =18
+
+        cmbPartition As combobox:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DefaultSelectedItems: |-
+                =If(tglPartition.Value=true, SortByColumns(
+                    Filter(
+                        TblPartitions,
+                        WorkspaceName = drpWorkspace.Selected.Value && DatasetName = drpDataset.Selected.Value && TableName in cmbTable.SelectedItems
+                    ),
+                    "TableName"
+                ))
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            DisplayFields: =["PartitionName","TableName"]
+            DisplayMode: =If(drpRefresh.Selected.Value = "N", DisplayMode.Edit , DisplayMode.Disabled)
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =46
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            InputTextPlaceholder: ="Find Partitions for selected Tables to refresh"
+            Items: |-
+                =SortByColumns(
+                    Filter(
+                        TblPartitions,
+                        WorkspaceName = drpWorkspace.Selected.Value && DatasetName = drpDataset.Selected.Value && TableName in cmbTable.SelectedItems
+                    ),
+                    "TableName"
+                )
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Reset: =
+            SearchFields: =["DatasetName"]
+            SearchItems: |-
+                =Search(SortByColumns(
+                    Filter(
+                        TblPartitions,
+                        WorkspaceName = drpWorkspace.Selected.Value && DatasetName = drpDataset.Selected.Value && TableName in cmbTable.SelectedItems
+                    ),
+                    "TableName"
+                ),cmbPartition.SearchText,DatasetName)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            Size: =13
+            Template: =ListItemTemplate.Double
+            Width: =409
+            X: =440
+            Y: =487
+            ZIndex: =21
+
+        lblPartitionparam As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =95
+            Size: =13
+            Text: |-
+                =Concatenate("[", Concat(cmbPartition.SelectedItems,"{" & Char(34) & "table" & Char(34) & ":" & Char(34) & TableName & Char(34) & "," & Char(34) & "partition"  & Char(34) & ":" & Char(34) & PartitionName & Char(34) & "}", ","), "]")
+            Visible: =false
+            Width: =205
+            X: =912
+            Y: =121
+            ZIndex: =22
+
+        lblTitle As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 134, 208, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =72
+            Size: =13
+            Text: |
+                ="[Tables-Partitions seperated by semicolon]"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =If(drpRefresh.SelectedText.Value="N",true,false)
+            Width: =180
+            X: =233
+            Y: =710
+            ZIndex: =23
+
+        lblTblPartlist As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(121, 121, 121, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =153
+            Size: =13
+            Text: =Concat(cmbPartition.SelectedItems, TableName & " - " & PartitionName, "; ")
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =If(drpRefresh.SelectedText.Value="N",true,false)
+            Width: =630
+            X: =438
+            Y: =672
+            ZIndex: =24
+
+        lblPartition_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Final Refresh List"
+            Width: =195
+            X: =233
+            Y: =672
+            ZIndex: =25
+
+        tglPartition As toggleSwitch:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =true
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            FalseFill: =RGBA(218, 218, 218, 1)
+            FalseHoverFill: =RGBA(218, 218, 218, 1)
+            FalseText: ="Clear All Selections"
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            HandleFill: =RGBA(255, 255, 255, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            Size: =13
+            TrueFill: =RGBA(255, 200, 61, 1)
+            TrueHoverFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            TrueText: ="Autofill All Selections"
+            Width: =256
+            X: =866
+            Y: =498
+            ZIndex: =29
+
+        lblEmail As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 200, 61, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =13
+            Text: ="Emails to Notify"
+            Width: =195
+            X: =233
+            Y: =555
+            ZIndex: =30
+
+        txtEmail As text:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =85
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(31, 31, 31, 1)
+            Mode: =TextMode.MultiLine
+            PressedBorderColor: =RGBA(255, 200, 61, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(31, 31, 31, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Width: =628
+            X: =440
+            Y: =560
+            ZIndex: =31
+
+        lblTitle_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 134, 208, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =72
+            Size: =13
+            Text: ="[Seperate multiple Email-IDs by comma]"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =If(drpRefresh.SelectedText.Value="N",true,false)
+            Width: =180
+            X: =233
+            Y: =586
+            ZIndex: =32
+
+        tglTable As toggleSwitch:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            FalseFill: =RGBA(218, 218, 218, 1)
+            FalseHoverFill: =RGBA(218, 218, 218, 1)
+            FalseText: ="Clear All Selections"
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            HandleFill: =RGBA(255, 255, 255, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            Size: =13
+            TrueFill: =RGBA(255, 200, 61, 1)
+            TrueHoverFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            TrueText: ="Autofill All Selections"
+            Visible: =false
+            Width: =256
+            X: =866
+            Y: =411
+            ZIndex: =35
+
